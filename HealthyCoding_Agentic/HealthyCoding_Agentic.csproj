@@ -1,0 +1,42 @@
+﻿<Project>
+  <Sdk Name="Microsoft.NET.Sdk" />
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <PublishReadyToRun>true</PublishReadyToRun>
+    <UICulture>en-US</UICulture>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;SKEXP0070;SKEXP0001;SKEXP0110;SKEXP0080</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;SKEXP0070;SKEXP0001;SKEXP0110;SKEXP0080</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Images\appIcon.png" />
+    <None Remove="Images\done.png" />
+    <None Remove="Images\execute.png" />
+    <None Remove="Images\send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\appIcon.png" />
+    <Resource Include="Images\done.png" />
+    <Resource Include="Images\execute.png" />
+    <Resource Include="Images\send.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageReference Include="Microsoft.SemanticKernel" Version="1.56.0" />
+    <PackageReference Include="Microsoft.SemanticKernel.Agents.Core" Version="1.56.0" />
+    <PackageReference Include="Microsoft.SemanticKernel.Agents.Orchestration" Version="1.56.0-preview" />
+    <PackageReference Include="Microsoft.SemanticKernel.Agents.Runtime.InProcess" Version="1.56.0-preview" />
+    <PackageReference Include="Microsoft.SemanticKernel.Connectors.Ollama" Version="1.56.0-alpha" />
+    <PackageReference Include="Microsoft.SemanticKernel.Process.Core" Version="1.56.0-alpha" />
+    <PackageReference Include="Microsoft.SemanticKernel.Process.LocalRuntime" Version="1.56.0-alpha" />
+    <PackageReference Include="Microsoft.SemanticKernel.Process.Runtime.Dapr" Version="1.56.0-alpha" />
+  </ItemGroup>
+</Project>

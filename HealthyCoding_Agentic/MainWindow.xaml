@@ -1,0 +1,155 @@
+﻿<Window x:Class="HealthyCoding_Agentic.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+        xmlns:h="clr-namespace:HealthyCoding_Agentic.Helpers"
+        xmlns:vm="clr-namespace:HealthyCoding_Agentic.ViewModels"
+        mc:Ignorable="d"
+        Title="AI-Ready App"
+        Icon="/Images/appIcon.png"
+        Height="600"
+        Width="1000"
+        Padding="10"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="visibilityConverter" />
+        <h:ReverseBooleanToVisibilityConverter x:Key="invertedVisibilityConverter" />
+        <DataTemplate x:Key="stepItemTemplate">
+            <Grid Margin="0,6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button Style="{StaticResource runButtonStyle}"
+                        VerticalAlignment="Top"
+                        Padding="5"
+                        Margin="0,3,0,0"
+                        Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=DataContext.RunStepCommand}"
+                        CommandParameter="{Binding}">
+                </Button>
+                <TextBlock Text="{Binding StepDescription}"
+                           VerticalAlignment="Top"
+                           TextWrapping="Wrap"
+                           Margin="6,0,0,0"
+                           Grid.Column="1" />
+            </Grid>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="6" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+
+        <DockPanel LastChildFill="True"
+                   Grid.RowSpan="2">
+            <Border Style="{StaticResource roundPanelBorder}"
+                    Margin="6,0,0,6"
+                    DockPanel.Dock="Top">
+                <ToolBarTray IsLocked="True"
+                             Background="Transparent">
+                    <ToolBar>
+                        <Button Content="Add"
+                                Command="{Binding AddCustomerCommand}" />
+                        <Button Content="Delete"
+                                Command="{Binding DeleteCustomersCommand}" />
+                    </ToolBar>
+                </ToolBarTray>
+            </Border>
+            <DataGrid ItemsSource="{Binding Customers}"
+                      h:DataGridSelectionBehavior.SelectedItems="{Binding SelectedCustomers, Mode=TwoWay}"
+                      x:Name="dataGrid"
+                      AutoGenerateColumns="False"
+                      SelectionMode="Extended"
+                      CanUserAddRows="False"
+                      Margin="6,0,0,6"
+                      Grid.Row="1"
+                      Grid.RowSpan="3">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Id}"
+                                        Header="Id"
+                                        Width="40" />
+                    <DataGridTextColumn Binding="{Binding FirstName}"
+                                        Header="First Name"
+                                        Width="100" />
+                    <DataGridTextColumn Binding="{Binding LastName}"
+                                        Header="Last Name"
+                                        Width="100" />
+                    <DataGridTextColumn Binding="{Binding Email}"
+                                        Header="Email"
+                                        Width="200" />
+                    <DataGridTextColumn Binding="{Binding PhoneNumber}"
+                                        Header="Phone"
+                                        Width="*" />
+                    <DataGridTextColumn Binding="{Binding RegistrationDate, StringFormat='{}{0:MMM dd, yyyy}'}"
+                                        Header="Registration Date"
+                                        Width="*" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+        <GridSplitter ResizeBehavior="PreviousAndNext"
+                      ResizeDirection="Columns"
+                      Background="Transparent"
+                      BorderThickness="0"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch"
+                      Focusable="False"
+                      Grid.Column="1" />
+        <Border Style="{StaticResource roundPanelBorder}"
+                Margin="0,0,6,6"
+                Grid.Column="2">
+            <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <ScrollViewer Visibility="{Binding IsPlanReady, Converter={StaticResource invertedVisibilityConverter}}"
+                                  HorizontalScrollBarVisibility="Disabled"
+                                  Grid.ColumnSpan="2">
+                        <TextBlock Text="{Binding DraftPlanDescription}"
+                                   TextWrapping="Wrap"
+                                   Margin="10" />
+                    </ScrollViewer>
+                    <ItemsControl x:Name="listBox"
+                                  ItemsSource="{Binding PlanStepFlow.Steps}"
+                                  ItemTemplate="{StaticResource stepItemTemplate}"
+                                  Visibility="{Binding IsPlanReady, Converter={StaticResource visibilityConverter}}"
+                                  Style="{StaticResource visibilityAnimationStyle}"
+                                  HorizontalContentAlignment="Stretch"
+                                  Focusable="False"
+                                  Margin="10"
+                                  Background="Transparent"
+                                  Grid.ColumnSpan="2" />
+                    <ProgressBar IsIndeterminate="True"
+                                 VerticalAlignment="Bottom"
+                                 Visibility="{Binding SendUserTaskCommand.IsRunning, Converter={StaticResource visibilityConverter}}"
+                                 Margin="10,6"
+                                 Grid.ColumnSpan="2" />
+                    <TextBox Text="{Binding UserTask, UpdateSourceTrigger=PropertyChanged}"
+                             AcceptsReturn="True"
+                             Margin="10,0,0,10"
+                             BorderThickness="1"
+                             Grid.Row="1" />
+                    <Button Command="{Binding SendUserTaskCommand}"
+                            IsDefault="True"
+                            VerticalAlignment="Bottom"
+                            Margin="8,0,10,10"
+                            Padding="8"
+                            Width="30"
+                            BorderThickness="1"
+                            Background="{DynamicResource {x:Static SystemColors.AccentColorBrushKey}}"
+                            Grid.Row="1"
+                            Grid.Column="1">
+                        <Image Source="/Images/send.png" />
+                    </Button>
+                </Grid>
+        </Border>
+    </Grid>
+</Window>

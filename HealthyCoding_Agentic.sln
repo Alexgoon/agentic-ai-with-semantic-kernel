@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35806.99
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthyCoding_Agentic", "HealthyCoding_Agentic\HealthyCoding_Agentic.csproj", "{87336831-59F1-45A1-A83B-0F2BC661C99C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87336831-59F1-45A1-A83B-0F2BC661C99C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87336831-59F1-45A1-A83B-0F2BC661C99C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87336831-59F1-45A1-A83B-0F2BC661C99C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87336831-59F1-45A1-A83B-0F2BC661C99C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33F04B11-AA62-4C94-B06C-19E5B98260D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33F04B11-AA62-4C94-B06C-19E5B98260D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33F04B11-AA62-4C94-B06C-19E5B98260D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33F04B11-AA62-4C94-B06C-19E5B98260D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5EE1A839-55BC-41DF-8D8D-5F4663ADCC78}
+	EndGlobalSection
+EndGlobal
