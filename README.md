@@ -10,7 +10,7 @@ The solution follows a **human-in-the-loop** approach: before executing the plan
 
 You can run the agents using either a local model (via [Ollama](https://ollama.com)) or OpenAI's cloud models. To switch between them, update the chat completion configuration in the [`Init` method](https://github.com/Alexgoon/agentic-ai-with-semantic-kernel/blob/f1b5f8390ba2669723910c4a252319e2bd4bb406/HealthyCoding_Agentic/Infrastructure/AgentService.cs#L17):
 
-**animation**
+![Demo](Images/Demo.gif)
 
 ```csharp
 // Use Ollama (local model)
