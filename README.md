@@ -3,7 +3,7 @@
 This sample demonstrates how to build a multi-agent AI system using [Semantic Kernel](https://github.com/microsoft/semantic-kernel). The system includes three agents:
 
 - **Planner** – creates a plan based on the user's input.
-- **Reviewer** – reviews the plan and provides feedback ot the planner.
+- **Reviewer** – reviews the plan and provides feedback to the planner.
 - **Executor** – carries out the plan step by step when prompted.
 
 The solution follows a **human-in-the-loop** approach: before executing the plan, agents present it to the user for step-by-step approval.
