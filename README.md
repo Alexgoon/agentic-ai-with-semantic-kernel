@@ -29,7 +29,8 @@ You’ll also need to [install Ollama](https://ollama.com/download) and run the 
 > ollama run llama3.1:8b
 This command will download and launch the LLaMA model locally.
 
-Note that the `llama3.1:8b` model used in this project may not solve all tasks correctly. For real-world production apps, you may need to use more advanced models hosted on your server.
+> [!Note]  
+> The `llama3.1:8b` model used in this project may not solve all tasks correctly. For real-world production apps, you may need to use more advanced models hosted on your server.
 
 ### Run with OpenAI
 
