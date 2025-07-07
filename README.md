@@ -29,6 +29,8 @@ You’ll also need to [install Ollama](https://ollama.com/download) and run the 
 > ollama run llama3.1:8b
 This command will download and launch the LLaMA model locally.
 
+Note that the `llama3.1:8b` model used in this project may not solve all tasks correctly. For real-world production apps, you may need to use more advanced models hosted on your server.
+
 ### Run with OpenAI
 
 To use OpenAI instead of a local model, configure the OpenAI chat completion in the [`Init` method](https://github.com/Alexgoon/agentic-ai-with-semantic-kernel/blob/f1b5f8390ba2669723910c4a252319e2bd4bb406/HealthyCoding_Agentic/Infrastructure/AgentService.cs#L17)
