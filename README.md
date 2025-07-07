@@ -1,5 +1,8 @@
 # Agentic AI with Semantic Kernel
 
+> [!Note]  
+> This repository compliments the following YouTube video: [Build an AI Agent that Controls Your App UI](https://youtu.be/_gpqHKWqbwA)
+
 This sample demonstrates how to build a multi-agent AI system using [Semantic Kernel](https://github.com/microsoft/semantic-kernel). The system includes three agents:
 
 - **Planner** – creates a plan based on the user's input.
@@ -20,5 +23,3 @@ builder.AddOllamaChatCompletion(modelId: "llama3.1:8b", endpoint: new Uri("http:
 builder.AddOpenAIChatCompletion("gpt-4.1-mini", "[YOUR OPENAI API KEY]");
 ```
 
-> [!Note]  
-> This repository compliments the following YouTube video: [Build an AI Agent that Controls Your App UI](https://youtu.be/_gpqHKWqbwA)
