@@ -50,7 +50,6 @@ public class AgentService : IAgentService {
     ChatCompletionAgent CreateAgent(string name, string instructions, Kernel kernel, IEnumerable<KernelPlugin> plugins = null, PromptExecutionSettings promptSettings = null) {
         if (plugins != null) {
             kernel.Plugins.AddRange(plugins);
-            var test = kernel.Clone();
         }
         return new() {
             Name = name,
