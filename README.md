@@ -24,7 +24,7 @@ To use a local Ollama-based model, configure the Ollama chat completion in the [
 ```csharp
 builder.AddOllamaChatCompletion(modelId: "llama3.1:8b", endpoint: new Uri("http://localhost:11434/"));
 ```
-You’ll also need to install Ollama and run the following command in the command prompt:
+You’ll also need to [install Ollama](https://ollama.com/download) and run the following command in the command prompt:
 
 > ollama run llama3.1:8b
 This command will download and launch the LLaMA model locally.
