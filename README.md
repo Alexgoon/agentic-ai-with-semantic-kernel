@@ -21,4 +21,4 @@ builder.AddOpenAIChatCompletion("gpt-4.1-mini", "[YOUR OPENAI API KEY]");
 ```
 
 > [!Note]  
-> This repository compliments the following YouTube video: 
+> This repository compliments the following YouTube video: [Build an AI Agent that Controls Your App UI](https://youtu.be/_gpqHKWqbwA)
