@@ -1,7 +1,7 @@
 # Agentic AI with Semantic Kernel
 
 > [!Note]  
-> This repository compliments the following YouTube video: [Build an AI Agent that Controls Your App UI](https://youtu.be/_gpqHKWqbwA)
+> This repository compliments the following YouTube video: [Build an AI Agent that Controls Your App UI](https://youtu.be/_gpqHKWqbwA?si=WYGTSbLlAilLn8Zh)
 
 This sample demonstrates how to build a multi-agent AI system using [Semantic Kernel](https://github.com/microsoft/semantic-kernel). The system includes three agents:
 
